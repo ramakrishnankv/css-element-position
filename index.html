@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Element Positioning Options :: Position</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Ramakrishnan K V">
+  <meta name="description" content="Positioning of html elements using CSS - static, relative, absolute, fixed, sticky">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="html5.png" type="image/x-icon" sizes="16x16">
+  <link type="text/css" rel="stylesheet" href="css/styles.css" />
+  <script src="js/scripts.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="menuPrime">
+      <a href="index.html" class="menuPrimeItem">Position</a>
+      <a href="modal.html" class="menuPrimeItem">Modal Popup</a>
+    </nav>
+  </header>
+  <main>
+    <section class="siteDesc paper">
+      <h1>CSS Position</h1>
+      <article class="articleCont">
+        <h3>CSS Position properties</h3>
+        <p>
+          Positioning methods for an element is specified by position property in CSS. Possible five values for position
+          proerty are;
+        </p>
+        <ul>
+          <li>static</li>
+          <li>relative</li>
+          <li>absolute</li>
+          <li>fixed</li>
+          <li>sticky</li>
+        </ul>
+        <p>
+          Properties "left", "top", "right" and "bottom" decides the position of the element. "z-index" property allows
+          the
+          element
+          to stack over the another.
+        </p>
+        <figure class="code">
+          <pre><code> 
+  .myClass {
+      position: static; /* static | relative | absolute | fixed | sticky */   
+  }
+</code>
+</pre>
+        </figure>
+      </article>
+      <article class="articleCont">
+        <h3>Static</h3>
+        <p>
+          By default every elements are positioned static. The element's position will be
+          accroding to the normal content flow. Static value can use at any stage when position to be
+          overrided to default. Properties left, top, right and bottom are not affected by
+          static positioned element.
+        </p>
+        <div class="egBlock">
+          <p>The block with yellow background color below is positioned static. Clicking on "Toggle Block: static
+            &lt;-&gt;
+            absolute" link toggles the position
+            between static
+            and absolute. Read the content inside the yellowish block for more details
+          </p>
+          <div class="animEgBlock" data-agent='positionable'
+            data-props='{
+              "initClass": "staticItem",
+              "replClass": "absItem",
+              "initText": "This is a static positioned element, clicking the link above, this will changed to absolute positioned element.",
+              "replText": "This is an absolute positioned element, clicking the link again this will toggled back to static positioned element. When scrolled the absolute positioned element will move accordingly."}'>
+            <p>
+              <a href="javascript:void(0);" id="link1" data-name="toggleLink">Toggle Block: static &lt;-&gt;
+                absolute
+              </a>
+            </p>
+            <div id="link1-d" class="staticItem" data-name="toggleContent">
+              <!-- content will be populated -->
+            </div>
+          </div>
+        </div>
+        <p class="snippetBlock">
+          <figure class="code">
+            <pre>
+  <code>
+  <strong>static CSS style:</strong>
+
+  .staticItem {
+    background-color: #f5efd4;
+    padding: 20px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+  }
+
+  <strong>absolute CSS style:</strong>
+
+  .absItem {
+    background-color: #f5efd4;
+    padding: 20px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 30%;
+    min-height: 100px;
+  }
+  </code>
+</pre>
+          </figure>
+        </p>
+        <p>
+          <div class="iconContent">
+            <span class="icon icon-imp">&nbsp;</span>
+            <ul>
+              <li>
+                Properties top, left, z-index won't have any impact for static positioned element.
+              </li>
+              <li>
+                No need to specify position: static as by default an element is static positioned.
+              </li>
+              <li>
+                Observe, when static positioned element changed to absolute positioned element the initial space
+                occuppied by the element is cleared completely.
+              </li>
+            </ul>
+          </div>
+        </p>
+      </article>
+
+      <article class="articleCont">
+        <h3>Relative</h3>
+        <p>
+          An element with position: relative; is positioned relative to its normal position.
+          Setting the top, right, bottom, and left properties of a relative positioned element will cause it to be
+          adjusted away
+          from its normal position. Other content will not be adjusted to fit into any blank space left by the element.
+        </p>
+        <div class="egBlock">
+          <p>The block with yellow background color below is positioned static. Clicking on "Toggle Block: static
+            &lt;-&gt;
+            relative" link toggles the position
+            between static
+            and relative. Read the content inside the yellowish block for more details
+          </p>
+          <div class="animEgBlock" data-agent='positionable'
+            data-props='{
+                          "initClass": "staticItem",
+                          "replClass": "relItem",
+                          "initText": "This is a static positioned element, clicking the above link this will changed to absolute positioned element.",
+                          "replText": "This is an absolute positioned element, clicking the link this will changed to static positioned element. When scrolled the absolute positioned element will move accordingly."}'>
+            <p><a href="javascript:void(0);" id="link1" data-name="toggleLink">Toggle Block: static &lt;-&gt;
+                relative</a></p>
+            <div id="link2-d" class="staticItem" data-name="toggleContent">
+              <!-- content will be populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- <p class="snippetBlock">
+          <figure class="code">
+            <pre>
+        <code>
+        <strong>static CSS style:</strong>
+      
+        .staticItem {
+          background-color: #f5efd4;
+          padding: 20px;
+          z-index: 100;
+          top: 0;
+          left: 0;
+        }
+      
+        <strong>absolute CSS style:</strong>
+      
+        .absItem {
+          background-color: #f5efd4;
+          padding: 20px;
+          z-index: 100;
+          top: 0;
+          left: 0;
+          position: absolute;
+          width: 30%;
+          min-height: 100px;
+        }
+        </code>
+      </pre>
+          </figure>
+        </p> -->
+        <!-- <p>
+          <div class="iconContent">
+            <span class="icon icon-imp">&nbsp;</span>
+            <ul>
+              <li>
+                Properties top, left, z-index won't have any impact for static positioned element.
+              </li>
+              <li>
+                No need to specify position: static as by default an element is static positioned.
+              </li>
+              <li>
+                Observe, when static positioned element changed to absolute positioned element the initial space
+                occuppied by the element is cleared completely.
+              </li>
+            </ul>
+          </div>
+        </p> -->
+      </article>
+
+      <article class="articleCont">
+        <h3>Absolute</h3>
+        <p>
+          Is positioned relative to the nearest positioned ancestor (instead of positioned
+          relative to the viewport, like fixed).
+
+          However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves
+          along with
+          page scrolling.
+        </p>
+        <div class="egBlock">
+          <p>The block with yellow background color below is positioned static. Clicking on "Toggle Block: static
+            &lt;-&gt;
+            relative" link toggles the position
+            between static
+            and relative. Read the content inside the yellowish block for more details
+          </p>
+          <div class="animEgBlock" data-agent='positionable'
+            data-props='{
+                                "initClass": "staticItem",
+                                "replClass": "relItem",
+                                "initText": "This is a static positioned element, clicking the above link this will changed to absolute positioned element.",
+                                "replText": "This is an absolute positioned element, clicking the link this will changed to static positioned element. When scrolled the absolute positioned element will move accordingly."}'>
+            <p><a href="javascript:void(0);" id="link1" data-name="toggleLink">Toggle Block: static &lt;-&gt;
+                relative</a></p>
+            <div id="link2-d" class="staticItem" data-name="toggleContent">
+              <!-- content will be populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- <p class="snippetBlock">
+                <figure class="code">
+                  <pre>
+              <code>
+              <strong>static CSS style:</strong>
+            
+              .staticItem {
+                background-color: #f5efd4;
+                padding: 20px;
+                z-index: 100;
+                top: 0;
+                left: 0;
+              }
+            
+              <strong>absolute CSS style:</strong>
+            
+              .absItem {
+                background-color: #f5efd4;
+                padding: 20px;
+                z-index: 100;
+                top: 0;
+                left: 0;
+                position: absolute;
+                width: 30%;
+                min-height: 100px;
+              }
+              </code>
+            </pre>
+                </figure>
+              </p> -->
+        <!-- <p>
+                <div class="iconContent">
+                  <span class="icon icon-imp">&nbsp;</span>
+                  <ul>
+                    <li>
+                      Properties top, left, z-index won't have any impact for static positioned element.
+                    </li>
+                    <li>
+                      No need to specify position: static as by default an element is static positioned.
+                    </li>
+                    <li>
+                      Observe, when static positioned element changed to absolute positioned element the initial space
+                      occuppied by the element is cleared completely.
+                    </li>
+                  </ul>
+                </div>
+              </p> -->
+      </article>
+
+      <article class="articleCont">
+        <h3>Fixed</h3>
+        <p>
+          Is positioned relative to the viewport, which means
+          it always remains in the same place
+          even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+
+          A fixed element does not leave a gap in the page where it would normally have been located.
+        </p>
+        <div class="egBlock">
+          <p>The block with yellow background color below is positioned static. Clicking on "Toggle Block: static
+            &lt;-&gt;
+            relative" link toggles the position
+            between static
+            and relative. Read the content inside the yellowish block for more details
+          </p>
+          <div class="animEgBlock" data-agent='positionable'
+            data-props='{
+                                      "initClass": "staticItem",
+                                      "replClass": "relItem",
+                                      "initText": "This is a static positioned element, clicking the above link this will changed to absolute positioned element.",
+                                      "replText": "This is an absolute positioned element, clicking the link this will changed to static positioned element. When scrolled the absolute positioned element will move accordingly."}'>
+            <p><a href="javascript:void(0);" id="link1" data-name="toggleLink">Toggle Block: static &lt;-&gt;
+                relative</a></p>
+            <div id="link2-d" class="staticItem" data-name="toggleContent">
+              <!-- content will be populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- <p class="snippetBlock">
+                      <figure class="code">
+                        <pre>
+                    <code>
+                    <strong>static CSS style:</strong>
+                  
+                    .staticItem {
+                      background-color: #f5efd4;
+                      padding: 20px;
+                      z-index: 100;
+                      top: 0;
+                      left: 0;
+                    }
+                  
+                    <strong>absolute CSS style:</strong>
+                  
+                    .absItem {
+                      background-color: #f5efd4;
+                      padding: 20px;
+                      z-index: 100;
+                      top: 0;
+                      left: 0;
+                      position: absolute;
+                      width: 30%;
+                      min-height: 100px;
+                    }
+                    </code>
+                  </pre>
+                      </figure>
+                    </p> -->
+        <!-- <p>
+                      <div class="iconContent">
+                        <span class="icon icon-imp">&nbsp;</span>
+                        <ul>
+                          <li>
+                            Properties top, left, z-index won't have any impact for static positioned element.
+                          </li>
+                          <li>
+                            No need to specify position: static as by default an element is static positioned.
+                          </li>
+                          <li>
+                            Observe, when static positioned element changed to absolute positioned element the initial space
+                            occuppied by the element is cleared completely.
+                          </li>
+                        </ul>
+                      </div>
+                    </p> -->
+      </article>
+
+      <article class="articleCont">
+        <h3>Sticky</h3>
+        <p>
+          is positioned based on the user's scroll position.
+
+          A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned
+          relative until a
+          given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
+        </p>
+        <div class="egBlock">
+          <p>The block with yellow background color below is positioned static. Clicking on "Toggle Block: static
+            &lt;-&gt;
+            relative" link toggles the position
+            between static
+            and relative. Read the content inside the yellowish block for more details
+          </p>
+          <div class="animEgBlock" data-agent='positionable'
+            data-props='{
+                                                  "initClass": "staticItem",
+                                                  "replClass": "relItem",
+                                                  "initText": "This is a static positioned element, clicking the above link this will changed to absolute positioned element.",
+                                                  "replText": "This is an absolute positioned element, clicking the link this will changed to static positioned element. When scrolled the absolute positioned element will move accordingly."}'>
+            <p><a href="javascript:void(0);" id="link1" data-name="toggleLink">Toggle Block: static &lt;-&gt;
+                relative</a></p>
+            <div id="link2-d" class="staticItem" data-name="toggleContent">
+              <!-- content will be populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- <p class="snippetBlock">
+                                  <figure class="code">
+                                    <pre>
+                                <code>
+                                <strong>static CSS style:</strong>
+                              
+                                .staticItem {
+                                  background-color: #f5efd4;
+                                  padding: 20px;
+                                  z-index: 100;
+                                  top: 0;
+                                  left: 0;
+                                }
+                              
+                                <strong>absolute CSS style:</strong>
+                              
+                                .absItem {
+                                  background-color: #f5efd4;
+                                  padding: 20px;
+                                  z-index: 100;
+                                  top: 0;
+                                  left: 0;
+                                  position: absolute;
+                                  width: 30%;
+                                  min-height: 100px;
+                                }
+                                </code>
+                              </pre>
+                                  </figure>
+                                </p> -->
+        <!-- <p>
+                                  <div class="iconContent">
+                                    <span class="icon icon-imp">&nbsp;</span>
+                                    <ul>
+                                      <li>
+                                        Properties top, left, z-index won't have any impact for static positioned element.
+                                      </li>
+                                      <li>
+                                        No need to specify position: static as by default an element is static positioned.
+                                      </li>
+                                      <li>
+                                        Observe, when static positioned element changed to absolute positioned element the initial space
+                                        occuppied by the element is cleared completely.
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </p> -->
+      </article>
+
+
+    </section>
+  </main>
+  <footer>
+    &copy; 2020
+  </footer>
+</body>
+
+</html>

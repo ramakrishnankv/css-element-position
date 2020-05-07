@@ -1,0 +1,36 @@
+{
+  "name": "css-element-position",
+  "version": "0.0.1",
+  "description": "This Demo page is to showcase CSS Position and it's properties works.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramakrishnankv/css-element-position.git"
+  },
+  "keywords": [
+    "css",
+    "position",
+    "properties",
+    "property",
+    "modal",
+    "popup",
+    "create",
+    "modal",
+    "create",
+    "popup",
+    "using",
+    "css",
+    "only",
+    "css",
+    "modal"
+  ],
+  "author": "Ramki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramakrishnankv/css-element-position/issues"
+  },
+  "homepage": "https://github.com/ramakrishnankv/css-element-position#readme"
+}

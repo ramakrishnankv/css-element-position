@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Element Positioning Options :: Modal</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Ramakrishnan K V">
+  <meta name="description" content="Positioning of html elements using CSS - static, relative, absolute, fixed, sticky">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="html5.png" type="image/x-icon" sizes="16x16">
+  <link type="text/css" rel="stylesheet" href="css/styles.css" />
+  <script lang="javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="menuPrime">
+      <a href="index.html" class="menuPrimeItem">Position</a>
+      <a href="modal.html" class="menuPrimeItem">Modal Popup</a>
+    </nav>
+  </header>
+  <main>
+    <section class="siteDesc paper">
+      <h1>Positioning a html element using CSS</h1>
+      <article>
+        <p>
+          Positioning methods for an element is specified by position property in CSS. Here are some example use cases
+          using position property. Possible five values for position proerty are;
+        </p>
+        <ul>
+          <li type="disc">static</li>
+          <li type="disc">relative</li>
+          <li type="disc">absolute</li>
+          <li type="disc">fixed</li>
+          <li type="disc">sticky</li>
+        </ul>
+        <p>
+          Properties left, top, right and bottom decides the position of the element. "z-index" property allows the
+          element
+          to stack over the another.
+        </p>
+        <p>
+          <strong>Static: </strong>By default every elements are positioned static. The element's position will be
+          accroding to the normal content flow. Static value can use at any stage when position to be
+          overrided to default. Properties left, top, right and bottom are not affected by
+          static positioned element.
+
+          <a href="javascript:void(0);" id="link1">This is Link 1</a>
+          <div id="link1-d" class="staticItem">
+            This is a static positioned element, clicking the above link this will changed to absolute positioned
+            element. Try!
+          </div>
+        </p>
+        <p>
+          <strong>Relative: </strong>An element with position: relative; is positioned relative to its normal position.
+          Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be
+          adjusted away
+          from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+        </p>
+        <p>
+          <strong>Absolute: </strong>Is positioned relative to the nearest positioned ancestor (instead of positioned
+          relative to the viewport, like fixed).
+
+          However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves
+          along with
+          page scrolling.
+        </p>
+        <p>
+          <strong>Fixed: </strong>Is positioned relative to the viewport, which means
+          it always remains in the same place
+          even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+
+          A fixed element does not leave a gap in the page where it would normally have been located.
+        </p>
+        <p>
+          <strong>Sticky: </strong>is positioned based on the user's scroll position.
+
+          A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned
+          relative until a
+          given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
+        </p>
+
+      </article>
+    </section>
+    <section class="leftPane">
+      <h3></h3>
+    </section>
+    <section class="rightPane"></section>
+  </main>
+  <footer>
+    &copy; 2020
+  </footer>
+</body>
+
+</html>
